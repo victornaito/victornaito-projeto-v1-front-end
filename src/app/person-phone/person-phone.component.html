@@ -1,0 +1,21 @@
+<form [formGroup]="form">
+
+<div *ngFor="let person of persons">
+  <div class="card card-body">
+    Name: {{person.name}}
+    Phone Number: <input type="number" value="" (change)="setForm('phoneNumber', $event.target.value)"/>
+    Phone Number Type:
+    <select value="" (change)="setForm('phoneNumberTypeId', $event.target.value)">
+      <option value="1">Local Phone</option>
+      <option value="2">Cell Phone</option>
+      </select>
+    <button (click)="inserir(person?.businessEntityID)">Novo</button>
+    <button (click)="alterar(person?.businessEntityID)">Alterar</button>
+    <button (click)="excluir(person?.businessEntityID)">Excluir</button>
+  </div>
+</div>
+
+<div>
+</div>
+
+</form>
